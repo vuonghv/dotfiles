@@ -89,8 +89,8 @@ nnoremap <space> za
 set foldmethod=indent " Fold based on indent level 
 set nofoldenable  " Disable folding when opening files
 " }}}
+
 " CtrlP Vim Settings {{{
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_cmd = 'CtrlP' " default find in buffer
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/.hg/*,*/.svn/*  " Exclude files or directories
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
@@ -100,13 +100,21 @@ let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' " Set the directory to store the c
 let g:ctrlp_clear_cache_on_exit = 0 " Do Not Delete the cache files when exiting Vim
 let g:ctrlp_show_hidden = 0   " Do not scan for dotfiles and dotdirs
 let g:ctrlp_open_new_file = 'v' " Open a newly created file in a new vertical split.
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'  " Specify an external tool to use for listing file instead of using Vim's globpath()
-"let g:ctrlp_user_command = 'find %s -type f'       " Specify an external tool to use for listing file instead of using Vim's globpath()
+" Specify an external tool to use for listing file instead of using Vim's globpath()
+let g:ctrlp_user_command = 'ag %s --ignore-case --nocolor --nogroup --hidden
+            \ --ignore .git
+            \ --ignore .svn
+            \ --ignore .hg
+            \ --ignore .DS_Store
+            \ --ignore "**/*.pyc"
+            \ -g ""'
 let g:ctrlp_working_path_mode = 0
 " }}}
+
 " Path for going to file gf {{{
 set path+=/usr/local/include,/usr/src/linux/include
 " }}}
+
 " YouCompleteMe config {{{
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -121,7 +129,8 @@ let g:ycm_use_ultisnips_completer = 0
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 " }}}
-" Solarized Color Scheme {{{
+
+" Color Scheme Configurations {{{
 set background=dark
 let g:solarized_termcolors=16
 let g:solarized_termtrans=1
@@ -129,13 +138,17 @@ let g:solarized_bold=1
 let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
 let g:solarized_degraded=0
-colorscheme solarized
+"colorscheme solarized
+colorscheme delek
 highlight Folded ctermbg=NONE " Turn off highlight folded
 " }}}
-" The Silver Searcher Config {{{
-let g:ag_prg = "ag --vimgrep --smart-case"  "The location of the Ag program
+
+" Ag.vim The Silver Searcher Config {{{
+"let g:ag_prg = "ag --vimgrep --smart-case"  "The location of the Ag program
+let g:ag_prg = "ag --column --nocolor --nogroup "
 let g:ag_highlight = 1  " Highlight the search terms
 " }}}
+
 " Vim-Airline Config {{{
 
 " Loaded extensions
