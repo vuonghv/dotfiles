@@ -173,6 +173,8 @@ let g:airline#extensions#ctrlp#show_adjacent_modes = 1
 
 " python-mode configurations {{{
 " https://github.com/klen/python-mode
+" set pymode = 0 to disable Python-mode, enable Jedi-vim
+let g:pymode = 0
 let g:pymode_python = 'python3'
 let g:pymode_options_colorcolumn = 1
 let g:pymode_indent = 1
