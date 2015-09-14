@@ -64,8 +64,9 @@ set expandtab " TABS are SPACES
 
 set cindent " Indetication for C language
 " }}}
+
 " UI Config {{{
-set number " Show line numbers
+set relativenumber " Show line numbers
 set showcmd " Show command in bottom bar
 set cursorline  " Highlight current line
 set wildmenu  " Visual autocomplete for command menu
@@ -74,13 +75,17 @@ set showmatch " Highlight matching [{()}]
 set title " Set Terminal title to the name of the buffer we are editing.
 set laststatus=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set textwidth=79
+set colorcolumn=+1
 " }}}
+
 " Searching {{{
 set incsearch  " Search as characters are entered
 set hlsearch  " Highlight matches
 " Turn off highlight search
 nnoremap <Leader><Space> :nohlsearch<CR>
 " }}}
+
 " Folding {{{
 set foldlevelstart=0  " Open most folds by default
 set foldnestmax=10  " 10 nested fold max
