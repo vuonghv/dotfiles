@@ -42,6 +42,7 @@ map <C-l> <C-w>l
 " Close current buffer without closing the window
 map <Leader>bd :Bdelete<CR>
 " }}}
+
 " Moving lines maps {{{
 " support moving: NORMAL, INSERT and VISUAL modes.
 " Fixing for Meta key like: <A-..> <M-..>
@@ -56,6 +57,7 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 " }}}
+
 " Spaces and Tabs {{{
 set tabstop=4 " Number of visual SPACES per TAB
 set softtabstop=4 " Number of SPACES in TAB when editing
@@ -66,6 +68,7 @@ set cindent " Indetication for C language
 " }}}
 
 " UI Config {{{
+set number
 set relativenumber " Show line numbers
 set showcmd " Show command in bottom bar
 set cursorline  " Highlight current line
@@ -74,9 +77,10 @@ set lazyredraw " Redraw only when we need to
 set showmatch " Highlight matching [{()}]
 set title " Set Terminal title to the name of the buffer we are editing.
 set laststatus=2
-set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%w%y%=%-14.([%L]\ \ \ %l,%c%V%)\ %P
 set textwidth=79
 set colorcolumn=+1
+set formatoptions-=t
 " }}}
 
 " Searching {{{

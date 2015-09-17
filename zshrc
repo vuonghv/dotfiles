@@ -86,9 +86,3 @@ alias lss="ls -lhS"
 alias python=python3
 alias pip=pip3
 
-# Defaul, vim command using Python3
-# Vim with Python3 support
-alias vi3=/usr/local/bin/vim
-
-# Vim with Python2 support
-alias vi2=/usr/bin/vim
