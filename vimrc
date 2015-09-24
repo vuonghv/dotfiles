@@ -30,8 +30,8 @@ nmap <Leader>sv :source $MYVIMRC<CR>
 
 " Some shortcut mappings
 nnoremap ; :
-"nnoremap j gj
-"nnoremap k gk
+nnoremap j gj
+nnoremap k gk
 
 " Easy window navigation
 map <C-h> <C-w>h
